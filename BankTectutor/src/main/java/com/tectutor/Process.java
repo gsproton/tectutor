@@ -34,19 +34,6 @@ public class Process {
 		
 	}	
 
-	public void fkaddUser(String username) {
-		Bank bk = new Bank();
-  		bk.setName(username);
-		if(bank.size() >= 1) {
-			Bank bkmax = bank.stream().max(Comparator.comparingInt(Bank::getac)).get();
- 			bk.setAN(bkmax.getac()+1);
-		} else {
-			bk.actNo = 1;
-		}
-		bk.deposit(0.0);
-		bank.add(bk);
-	}	
-	
 	public void deposit() {
 		System.out.println("Enter amount to be deposited:");
 		Double amount = sc.nextDouble();
@@ -104,8 +91,7 @@ public class Process {
 	}
 	
 	public void process() {
-		fkaddUser("glenn");
-		fkaddUser("mike");
+ 
 		int quit = 0;
 		int choice = 0;
 		while (quit == 0) {
